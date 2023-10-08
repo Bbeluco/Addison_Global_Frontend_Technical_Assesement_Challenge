@@ -1,11 +1,12 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { View } from 'react-native';
+import BetSlip from './src/components/betslip/BetSlip';
+import MktpBet from './src/components/mktpBet/MktpBet';
 
 export default function App() {
   return (
     <View>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <BetSlip />
+      <MktpBet />
     </View>
   );
 }
