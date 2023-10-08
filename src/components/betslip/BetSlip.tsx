@@ -1,12 +1,17 @@
 import React from "react";
-import { StyleSheet, Button, View } from "react-native";
+import { StyleSheet, View, Text } from "react-native";
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import MktpBet from "../mktpBet/MktpBet";
+
+
+const Drawer = createDrawerNavigator();
 
 function BetSlip(): React.JSX.Element {
     return (
-        <View style={styles.viewBetSlip}>
-            <Button title="X"/>
-        </View>
-    )
+        <Drawer.Navigator defaultStatus="open">
+            <Drawer.Screen name="Feed" component={MktpBet} />
+        </Drawer.Navigator>
+      );
 }
 
 const styles = StyleSheet.create({
