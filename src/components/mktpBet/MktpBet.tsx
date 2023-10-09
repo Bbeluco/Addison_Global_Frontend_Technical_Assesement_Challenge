@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React, { memo, useState } from "react";
 import { Button, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 interface MktpBetType {
@@ -6,6 +6,9 @@ interface MktpBetType {
 }
 
 const MktpBet = memo(function MktpBet({ setOptionSelected }: MktpBetType): React.JSX.Element {
+    const [betOption, setBetOption] = useState('')
+
+
     return  (
         <View style={styles.viewMktpBetOption}>
             <View style={styles.match}>
@@ -16,11 +19,17 @@ const MktpBet = memo(function MktpBet({ setOptionSelected }: MktpBetType): React
             <View style={styles.viewArea}>
                 <Text style={styles.titleBetName}>To Win</Text>
                 <View style={styles.bets}>
-                    <TouchableOpacity style={[styles.viewArea, styles.btnChoseBet]}>
+                    <TouchableOpacity 
+                        onPress={() => setBetOption('button 1')} 
+                        style={[styles.viewArea, styles.btnChoseBet, betOption === 'button 1' && styles.optinChoosen]}
+                    >
                         <Text>Man United</Text>
                         <Text>1.2</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={[styles.viewArea, styles.btnChoseBet]}>
+                    <TouchableOpacity 
+                        onPress={() => setBetOption('button 2')} 
+                        style={[styles.viewArea, styles.btnChoseBet, betOption === 'button 2' && styles.optinChoosen]}
+                    >
                         <Text>Chelsea</Text>
                         <Text>2.2</Text>
                     </TouchableOpacity>
@@ -61,6 +70,9 @@ const styles = StyleSheet.create({
     },
     titleBetName: {
         padding: 7
+    },
+    optinChoosen: {
+        backgroundColor: 'green'
     }
 })
 
