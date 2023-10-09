@@ -1,5 +1,5 @@
 import React, { memo, useState } from "react";
-import { Button, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import mockReturnApi from "../../constants/mockReturnApi";
 
 interface MktpBetType {
@@ -9,40 +9,42 @@ interface MktpBetType {
 const MktpBet = memo(function MktpBet({ setOptionSelected }: MktpBetType): React.JSX.Element {
     const [betOption, setBetOption] = useState('')
 
-
-    return  (
+    return (
         <View style={styles.viewMktpBetOption}>
-            <View style={styles.match}>
-                <Text style={styles.matchInfo}>Man United</Text>
-                <Text style={styles.matchInfo}>VS</Text>
-                <Text style={styles.matchInfo}>Chelsea</Text>
-            </View>
-            <View style={styles.viewArea}>
-                <Text style={styles.titleBetName}>To Win</Text>
-                <View style={styles.bets}>
-                    <TouchableOpacity 
-                        onPress={() => setBetOption('button 1')} 
-                        style={[styles.viewArea, styles.btnChoseBet, betOption === 'button 1' && styles.optinChoosen]}
-                    >
-                        <Text>Man United</Text>
-                        <Text>1.2</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity 
-                        onPress={() => setBetOption('button 2')} 
-                        style={[styles.viewArea, styles.btnChoseBet, betOption === 'button 2' && styles.optinChoosen]}
-                    >
-                        <Text>Chelsea</Text>
-                        <Text>2.2</Text>
-                    </TouchableOpacity>
-                </View>
-            </View>
+            {
+                mockReturnApi.map((event, index) => (
+                    <View key={index}>
+                        <View style={styles.match}>
+                            <Text style={styles.matchInfo}>{event['name'].split(' vs ')[0]}</Text>
+                            <Text style={styles.matchInfo}>VS</Text>
+                            <Text style={styles.matchInfo}>{event['name'].split(' vs ')[1]}</Text>
+                        </View>
+                        {event['markets'].map((market, index) => (
+                            <View style={styles.viewArea}>
+                                <Text style={styles.titleBetName}>{market['name']}</Text>
+                                <View style={styles.bets}>
+                                {market['selections'].map((selection, index) => (
+                                    <TouchableOpacity
+                                        onPress={() => setBetOption('button ' + index)}
+                                        style={[styles.viewArea, styles.btnChoseBet, betOption === ('button ' + index) && styles.optinChoosen]}
+                                    >
+                                        <Text>{selection['name']}</Text>
+                                        <Text>{selection['price']}</Text>
+                                    </TouchableOpacity>
+                                ))}
+                                </View>
+                            </View>
+                        ))}
+                    </View>
+                ))
+            }
         </View>
     )
 })
 
 const styles = StyleSheet.create({
     viewMktpBetOption: {
-        padding: '10%'
+        margin: 5
     },
     viewArea: {
         borderWidth: 1,
