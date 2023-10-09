@@ -1,23 +1,21 @@
 import React from "react";
 import { StyleSheet, View, Text } from "react-native";
-import { createDrawerNavigator } from '@react-navigation/drawer';
-import MktpBet from "../mktpBet/MktpBet";
 
+interface BetSlipType {
+    bets: string
+}
 
-const Drawer = createDrawerNavigator();
-
-function BetSlip(): React.JSX.Element {
+function BetSlip({ bets }: BetSlipType): React.JSX.Element {
     return (
-        <Drawer.Navigator defaultStatus="open">
-            <Drawer.Screen name="Feed" component={MktpBet} />
-        </Drawer.Navigator>
+        <View style={styles.bets}>
+            <Text>{bets}</Text>
+        </View>
       );
 }
 
 const styles = StyleSheet.create({
-    viewBetSlip: {
-        marginTop: '10%',
-        borderWidth: 1
+    bets: {
+        marginTop: 50
     }
 })
 

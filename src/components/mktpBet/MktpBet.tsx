@@ -1,13 +1,17 @@
-import React from "react";
-import { StyleSheet, Text, View } from 'react-native';
+import React, { memo } from "react";
+import { Button, StyleSheet, Text, View } from 'react-native';
 
-function MktpBet(): React.JSX.Element {
+interface MktpBetType {
+    setOptionSelected: (s: string) => void
+}
+
+const MktpBet = memo(function MktpBet({ setOptionSelected }: MktpBetType): React.JSX.Element {
     return  (
         <View style={styles.viewMktpBetOption}>
-            <Text>Sou o texto base</Text>
+            <Button onPress={() => setOptionSelected('' + (Math.random()))} title={'Change here'}/>
         </View>
     )
-}
+})
 
 const styles = StyleSheet.create({
     viewMktpBetOption: {
