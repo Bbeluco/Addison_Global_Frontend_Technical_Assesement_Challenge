@@ -6,12 +6,11 @@ import MatchTeamsName from "./matchTeamsName/MatchTeamsName";
 import useMktpBetHooks from "./MktpBetHooks";
 
 interface MktpBetType {
-    setOptionSelected: (s: string) => void
+    betOption: string[],
+    pushSelectedOptionInfo: (s: string) => void
 }
 
-const MktpBet = memo(function MktpBet({ setOptionSelected }: MktpBetType): React.JSX.Element {
-    const { betOption, pushSelectedOptionInfo } = useMktpBetHooks()
-
+const MktpBet = memo(function MktpBet({ betOption, pushSelectedOptionInfo }: MktpBetType): React.JSX.Element {
     return (
         <View style={styles.viewMktpBetOption}>
             {
