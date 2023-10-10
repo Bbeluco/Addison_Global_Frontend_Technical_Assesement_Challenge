@@ -4,17 +4,21 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import { useMktpBetHooksType } from "../../types/useMktpBetHooksType";
 
 interface BetSlipType {
-    betOptions: useMktpBetHooksType[]
+    betOptions: useMktpBetHooksType[],
+    removeItemFromArray: (itemToRemove: number) => void
 }
 
-function BetSlip({ betOptions }: BetSlipType): React.JSX.Element {
+function BetSlip({ betOptions, removeItemFromArray }: BetSlipType): React.JSX.Element {
     return (
         <View>
             {betOptions?.map((betOption, index) => (
                 <View key={index * Math.random()} style={styles.bets}>
                     <Text style={styles.betOption}>{`${betOption['teamName']} ${betOption['titleBet']}`}</Text>
                     <Text style={[styles.betPrice, styles.defaultPadding]}>{betOption['price']}</Text>
-                    <TouchableOpacity style={styles.btnDeleteBet}>
+                    <TouchableOpacity 
+                        style={styles.btnDeleteBet} 
+                        onPress={() => removeItemFromArray(index)}
+                    >
                         <Text style={styles.btnDeleteBetText}>DELETE</Text>
                     </TouchableOpacity>
                     <View style={[styles.hr, styles.defaultMargin]}/>

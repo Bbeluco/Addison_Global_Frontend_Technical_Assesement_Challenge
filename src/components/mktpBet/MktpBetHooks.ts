@@ -23,7 +23,13 @@ function useMktpBetHooks() {
         setBetOption(aux)
     }
 
-    return { betOption, pushSelectedOptionInfo }
+    function removeItemFromArray(itemToRemove: number): void {
+        let aux = [...betOption]
+        aux.splice(itemToRemove, 1)
+        setBetOption(aux)
+    }
+
+    return { betOption, pushSelectedOptionInfo, removeItemFromArray }
 }
 
 export default useMktpBetHooks

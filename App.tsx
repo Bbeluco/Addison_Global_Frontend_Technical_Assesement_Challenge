@@ -7,12 +7,12 @@ import { NavigationContainer } from '@react-navigation/native';
 import useMktpBetHooks from './src/components/mktpBet/MktpBetHooks';
 
 export default function App() {
-  const { betOption, pushSelectedOptionInfo } = useMktpBetHooks()
+  const { betOption, pushSelectedOptionInfo, removeItemFromArray } = useMktpBetHooks()
   const Drawer = createDrawerNavigator();
 
   return (
     <NavigationContainer>
-      <Drawer.Navigator drawerContent={(_props) => <BetSlip betOptions={betOption}/>}>
+      <Drawer.Navigator drawerContent={(_props) => <BetSlip betOptions={betOption} removeItemFromArray={removeItemFromArray}/>}>
         <Drawer.Screen name='Bets'>
           {() => <MktpBet betOption={betOption} pushSelectedOptionInfo={pushSelectedOptionInfo}/>}
         </Drawer.Screen>
