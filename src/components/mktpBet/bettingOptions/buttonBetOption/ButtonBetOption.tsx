@@ -2,7 +2,6 @@ import React from "react";
 import { TouchableOpacity, Text, StyleSheet } from "react-native";
 import { SEPARATOR } from "../../../../constants/selectOptionConstants";
 import { ButtonBetOptionType } from "../../../../types/buttonBetOptionType";
-import useMktpBetHooks from "../../MktpBetHooks";
 
 function ButtonBetOption({ 
         pushSelectedOptionInfo,

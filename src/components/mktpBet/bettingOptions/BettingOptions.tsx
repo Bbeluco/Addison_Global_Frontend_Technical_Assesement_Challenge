@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
+import { StyleSheet, View, Text } from "react-native";
 import { BettingOptionsType } from "../../../types/bettingOptionsType";
 import ButtonBetOption from "./buttonBetOption/ButtonBetOption";
 
@@ -11,19 +11,21 @@ function BettingOptions({
         eventIndex, 
         marketIndex }: BettingOptionsType): React.JSX.Element {
     return (
-        <View style={styles.viewArea}>
+        <View key={Math.random()} style={styles.viewArea}>
             <Text style={styles.titleBetName}>{name}</Text>
             <View style={styles.bets}>
             {selections.map((selection, selectionIndex) => (
-                <ButtonBetOption 
-                    pushSelectedOptionInfo={pushSelectedOptionInfo}
-                    betOption={betOption}
-                    name={selection['name']}
-                    price={selection['price']}
-                    eventIndex={eventIndex}
-                    marketIndex={marketIndex}
-                    selectionIndex={selectionIndex}
-                />
+                <View key={selectionIndex * Math.random()}>
+                    <ButtonBetOption 
+                        pushSelectedOptionInfo={pushSelectedOptionInfo}
+                        betOption={betOption}
+                        name={selection['name']}
+                        price={selection['price']}
+                        eventIndex={eventIndex}
+                        marketIndex={marketIndex}
+                        selectionIndex={selectionIndex}
+                    />
+                </View>
             ))}
             </View>
         </View>

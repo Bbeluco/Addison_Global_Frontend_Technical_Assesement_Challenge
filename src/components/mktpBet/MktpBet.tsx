@@ -1,4 +1,4 @@
-import React, { memo, useState } from "react";
+import React, { memo } from "react";
 import { StyleSheet, View } from 'react-native';
 import mockReturnApi from "../../constants/mockReturnApi";
 import BettingOptions from "./bettingOptions/BettingOptions";
@@ -16,17 +16,19 @@ const MktpBet = memo(function MktpBet({ setOptionSelected }: MktpBetType): React
         <View style={styles.viewMktpBetOption}>
             {
                 mockReturnApi.map((event, eventIndex) => (
-                    <View key={eventIndex}>
+                    <View key={eventIndex * Math.random()}>
                         <MatchTeamsName eventName={event['name']} />
                         {event['markets'].map((market, marketIndex) => (
-                            <BettingOptions
-                                name={market['name']} 
-                                selections={market['selections']}
-                                pushSelectedOptionInfo={pushSelectedOptionInfo}
-                                betOption={betOption}
-                                eventIndex={eventIndex}
-                                marketIndex={marketIndex}
-                            />
+                            <View key={marketIndex * Math.random()}>
+                                <BettingOptions
+                                    name={market['name']} 
+                                    selections={market['selections']}
+                                    pushSelectedOptionInfo={pushSelectedOptionInfo}
+                                    betOption={betOption}
+                                    eventIndex={eventIndex}
+                                    marketIndex={marketIndex}
+                                />
+                            </View>
                         ))}
                     </View>
                 ))
