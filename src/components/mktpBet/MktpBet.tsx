@@ -1,6 +1,7 @@
 import React, { memo, useEffect, useState } from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import mockReturnApi from "../../constants/mockReturnApi";
+import { SEPARATOR, EVENT_INDEX, MARKET_INDEX } from "../../constants/selectOptionConstants";
 
 interface MktpBetType {
     setOptionSelected: (s: string) => void
@@ -12,12 +13,12 @@ const MktpBet = memo(function MktpBet({ setOptionSelected }: MktpBetType): React
     function pushSelectedOptionInfo(option: string): void {
         let aux = [...betOption]
 
-        const optionEventIndex = option.split('_')[1]
-        const optionMarketIndex = option.split('_')[2]
+        const optionEventIndex = option.split(SEPARATOR)[EVENT_INDEX]
+        const optionMarketIndex = option.split(SEPARATOR)[MARKET_INDEX]
 
         const searchSameGameAndMarket = aux.filter((optionsSelected) => 
             {
-                return optionsSelected.includes(`button_${optionEventIndex}_${optionMarketIndex}`)
+                return optionsSelected.includes(`button${SEPARATOR}${optionEventIndex}${SEPARATOR}${optionMarketIndex}`)
             }
         )
         if(searchSameGameAndMarket[0] !== undefined){
@@ -43,8 +44,8 @@ const MktpBet = memo(function MktpBet({ setOptionSelected }: MktpBetType): React
                                 <View style={styles.bets}>
                                 {market['selections'].map((selection, selectionIndex) => (
                                     <TouchableOpacity
-                                        onPress={() => pushSelectedOptionInfo(`button_${eventIndex}_${marketIndex}_${selectionIndex}`)}
-                                        style={[styles.viewArea, styles.btnChoseBet, betOption.includes(`button_${eventIndex}_${marketIndex}_${selectionIndex}`) && styles.optinChoosen]}
+                                        onPress={() => pushSelectedOptionInfo(`button${SEPARATOR}${eventIndex}${SEPARATOR}${marketIndex}${SEPARATOR}${selectionIndex}`)}
+                                        style={[styles.viewArea, styles.btnChoseBet, betOption.includes(`button${SEPARATOR}${eventIndex}${SEPARATOR}${marketIndex}${SEPARATOR}${selectionIndex}`) && styles.optinChoosen]}
                                     >
                                         <Text>{selection['name']}</Text>
                                         <Text>{selection['price']}</Text>
