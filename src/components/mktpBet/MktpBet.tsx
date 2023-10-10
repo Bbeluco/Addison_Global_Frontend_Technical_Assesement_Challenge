@@ -2,6 +2,7 @@ import React, { memo, useEffect, useState } from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import mockReturnApi from "../../constants/mockReturnApi";
 import { SEPARATOR, EVENT_INDEX, MARKET_INDEX } from "../../constants/selectOptionConstants";
+import MatchTeamsName from "./matchTeamsName/MatchTeamsName";
 
 interface MktpBetType {
     setOptionSelected: (s: string) => void
@@ -33,11 +34,7 @@ const MktpBet = memo(function MktpBet({ setOptionSelected }: MktpBetType): React
             {
                 mockReturnApi.map((event, eventIndex) => (
                     <View key={eventIndex}>
-                        <View style={styles.match}>
-                            <Text style={styles.matchInfo}>{event['name'].split(' vs ')[0]}</Text>
-                            <Text style={styles.matchInfo}>VS</Text>
-                            <Text style={styles.matchInfo}>{event['name'].split(' vs ')[1]}</Text>
-                        </View>
+                        <MatchTeamsName eventName={event['name']} />
                         {event['markets'].map((market, marketIndex) => (
                             <View style={styles.viewArea}>
                                 <Text style={styles.titleBetName}>{market['name']}</Text>
@@ -68,16 +65,6 @@ const styles = StyleSheet.create({
     viewArea: {
         borderWidth: 1,
         borderColor: 'black', 
-    },
-    match: {
-        borderWidth: 1,
-        borderColor: 'black',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        padding: '10%'
-    },
-    matchInfo: {
-        fontWeight: 'bold'
     },
     bets: {
         flexDirection: 'row',
