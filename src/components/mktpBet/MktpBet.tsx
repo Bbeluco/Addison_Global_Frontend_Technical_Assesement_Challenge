@@ -3,11 +3,11 @@ import { StyleSheet, View } from 'react-native';
 import mockReturnApi from "../../constants/mockReturnApi";
 import BettingOptions from "./bettingOptions/BettingOptions";
 import MatchTeamsName from "./matchTeamsName/MatchTeamsName";
-import useMktpBetHooks from "./MktpBetHooks";
+import { useMktpBetHooksType } from "../../types/useMktpBetHooksType";
 
 interface MktpBetType {
-    betOption: string[],
-    pushSelectedOptionInfo: (s: string) => void
+    betOption: useMktpBetHooksType[],
+    pushSelectedOptionInfo: (option: string, teamName: string, titleBet: string, price: number) => void
 }
 
 const MktpBet = memo(function MktpBet({ betOption, pushSelectedOptionInfo }: MktpBetType): React.JSX.Element {

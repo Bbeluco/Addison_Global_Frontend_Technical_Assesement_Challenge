@@ -19,6 +19,7 @@ function BettingOptions({
                     <ButtonBetOption 
                         pushSelectedOptionInfo={pushSelectedOptionInfo}
                         betOption={betOption}
+                        titleBet={name}
                         name={selection['name']}
                         price={selection['price']}
                         eventIndex={eventIndex}

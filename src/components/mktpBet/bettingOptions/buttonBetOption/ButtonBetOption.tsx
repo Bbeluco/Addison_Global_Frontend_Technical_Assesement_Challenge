@@ -6,6 +6,7 @@ import { ButtonBetOptionType } from "../../../../types/buttonBetOptionType";
 function ButtonBetOption({ 
         pushSelectedOptionInfo,
         betOption,
+        titleBet,
         name,
         price,
         eventIndex,
@@ -15,8 +16,8 @@ function ButtonBetOption({
     const buttonIdentifier = `button${SEPARATOR}${eventIndex}${SEPARATOR}${marketIndex}${SEPARATOR}${selectionIndex}`
     return (
         <TouchableOpacity
-            onPress={() => pushSelectedOptionInfo(buttonIdentifier)}
-            style={[styles.viewArea, styles.btnChoseBet, betOption.includes(buttonIdentifier) && styles.optinChoosen]}
+            onPress={() => pushSelectedOptionInfo(buttonIdentifier, name, titleBet, price)}
+            style={[styles.viewArea, styles.btnChoseBet, betOption.find(x => x['option'] === buttonIdentifier) && styles.optinChoosen]}
         >
             <Text>{name}</Text>
             <Text>{price}</Text>
