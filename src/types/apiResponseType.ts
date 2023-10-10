@@ -9,7 +9,7 @@ type EventType = {
 };
 
 /** Market Entity */
-type MarketType = {
+export type MarketType = {
     id: string;
     name: string;
     selections: SelectionType[];

@@ -2,6 +2,7 @@ import React, { memo, useEffect, useState } from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import mockReturnApi from "../../constants/mockReturnApi";
 import { SEPARATOR, EVENT_INDEX, MARKET_INDEX } from "../../constants/selectOptionConstants";
+import BettingOptions from "./bettingOptions/BettingOptions";
 import MatchTeamsName from "./matchTeamsName/MatchTeamsName";
 
 interface MktpBetType {
@@ -36,20 +37,14 @@ const MktpBet = memo(function MktpBet({ setOptionSelected }: MktpBetType): React
                     <View key={eventIndex}>
                         <MatchTeamsName eventName={event['name']} />
                         {event['markets'].map((market, marketIndex) => (
-                            <View style={styles.viewArea}>
-                                <Text style={styles.titleBetName}>{market['name']}</Text>
-                                <View style={styles.bets}>
-                                {market['selections'].map((selection, selectionIndex) => (
-                                    <TouchableOpacity
-                                        onPress={() => pushSelectedOptionInfo(`button${SEPARATOR}${eventIndex}${SEPARATOR}${marketIndex}${SEPARATOR}${selectionIndex}`)}
-                                        style={[styles.viewArea, styles.btnChoseBet, betOption.includes(`button${SEPARATOR}${eventIndex}${SEPARATOR}${marketIndex}${SEPARATOR}${selectionIndex}`) && styles.optinChoosen]}
-                                    >
-                                        <Text>{selection['name']}</Text>
-                                        <Text>{selection['price']}</Text>
-                                    </TouchableOpacity>
-                                ))}
-                                </View>
-                            </View>
+                            <BettingOptions
+                                name={market['name']} 
+                                selections={market['selections']}
+                                pushSelectedOptionInfo={pushSelectedOptionInfo}
+                                betOption={betOption}
+                                eventIndex={eventIndex}
+                                marketIndex={marketIndex}
+                            />
                         ))}
                     </View>
                 ))
@@ -61,27 +56,6 @@ const MktpBet = memo(function MktpBet({ setOptionSelected }: MktpBetType): React
 const styles = StyleSheet.create({
     viewMktpBetOption: {
         margin: 5
-    },
-    viewArea: {
-        borderWidth: 1,
-        borderColor: 'black', 
-    },
-    bets: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-    },
-    btnChoseBet: {
-        borderRadius: 10,
-        alignItems: 'center',
-        width: 100,
-        padding: 5,
-        margin: 5
-    },
-    titleBetName: {
-        padding: 7
-    },
-    optinChoosen: {
-        backgroundColor: 'green'
     }
 })
 
