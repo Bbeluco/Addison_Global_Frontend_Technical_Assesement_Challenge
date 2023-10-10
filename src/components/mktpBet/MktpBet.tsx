@@ -1,34 +1,16 @@
 import React, { memo, useState } from "react";
 import { StyleSheet, View } from 'react-native';
 import mockReturnApi from "../../constants/mockReturnApi";
-import { SEPARATOR, EVENT_INDEX, MARKET_INDEX } from "../../constants/selectOptionConstants";
 import BettingOptions from "./bettingOptions/BettingOptions";
 import MatchTeamsName from "./matchTeamsName/MatchTeamsName";
+import useMktpBetHooks from "./MktpBetHooks";
 
 interface MktpBetType {
     setOptionSelected: (s: string) => void
 }
 
 const MktpBet = memo(function MktpBet({ setOptionSelected }: MktpBetType): React.JSX.Element {
-    const [betOption, setBetOption] = useState<string[]>([])
-
-    function pushSelectedOptionInfo(option: string): void {
-        let aux = [...betOption]
-
-        const optionEventIndex = option.split(SEPARATOR)[EVENT_INDEX]
-        const optionMarketIndex = option.split(SEPARATOR)[MARKET_INDEX]
-
-        const searchSameGameAndMarket = aux.filter((optionsSelected) => 
-            {
-                return optionsSelected.includes(`button${SEPARATOR}${optionEventIndex}${SEPARATOR}${optionMarketIndex}`)
-            }
-        )
-        if(searchSameGameAndMarket[0] !== undefined){
-            aux.splice(aux.indexOf(searchSameGameAndMarket[0]), 1)
-        }
-        aux.push(option)
-        setBetOption(aux)
-    }
+    const { betOption, pushSelectedOptionInfo } = useMktpBetHooks()
 
     return (
         <View style={styles.viewMktpBetOption}>
