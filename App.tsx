@@ -12,7 +12,7 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Drawer.Navigator drawerContent={(_props) => <BetSlip betOption={betOption}/>}>
+      <Drawer.Navigator drawerContent={(_props) => <BetSlip betOptions={betOption}/>}>
         <Drawer.Screen name='Bets'>
           {() => <MktpBet betOption={betOption} pushSelectedOptionInfo={pushSelectedOptionInfo}/>}
         </Drawer.Screen>

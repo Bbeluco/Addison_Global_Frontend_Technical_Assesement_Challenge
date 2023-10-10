@@ -6,10 +6,6 @@ function useMktpBetHooks() {
     const [betOption, setBetOption] = useState<useMktpBetHooksType[]>([])
 
     function pushSelectedOptionInfo(option: string, teamName: string, titleBet: string, price: number): void {
-        // let test = [{ option, teamName, titleBet, price }]
-        // setBetOption(test)
-        // console.log(betOption)
-
         let aux = [...betOption]
         const optionEventIndex = option.split(SEPARATOR)[EVENT_INDEX]
         const optionMarketIndex = option.split(SEPARATOR)[MARKET_INDEX]

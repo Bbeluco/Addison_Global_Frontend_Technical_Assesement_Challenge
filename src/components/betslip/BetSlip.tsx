@@ -1,20 +1,25 @@
 import React from "react";
 import { StyleSheet, View, Text } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import { useMktpBetHooksType } from "../../types/useMktpBetHooksType";
 
 interface BetSlipType {
-    betOption: string[]
+    betOptions: useMktpBetHooksType[]
 }
 
-function BetSlip({ betOption }: BetSlipType): React.JSX.Element {
+function BetSlip({ betOptions }: BetSlipType): React.JSX.Element {
     return (
-        <View style={styles.bets}>
-            <Text style={styles.betOption}>Man United to WIN</Text>
-            <Text style={[styles.betPrice, styles.defaultPadding]}>1.2</Text>
-            <TouchableOpacity style={styles.btnDeleteBet}>
-                <Text style={styles.btnDeleteBetText}>DELETE</Text>
-            </TouchableOpacity>
-            <View style={[styles.hr, styles.defaultMargin]}/>
+        <View>
+            {betOptions?.map((betOption, index) => (
+                <View key={index * Math.random()} style={styles.bets}>
+                    <Text style={styles.betOption}>{`${betOption['teamName']} ${betOption['titleBet']}`}</Text>
+                    <Text style={[styles.betPrice, styles.defaultPadding]}>{betOption['price']}</Text>
+                    <TouchableOpacity style={styles.btnDeleteBet}>
+                        <Text style={styles.btnDeleteBetText}>DELETE</Text>
+                    </TouchableOpacity>
+                    <View style={[styles.hr, styles.defaultMargin]}/>
+                </View>
+            ))}
         </View>
       );
 }
