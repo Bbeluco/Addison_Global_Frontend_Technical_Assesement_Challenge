@@ -1,5 +1,5 @@
-import React, { memo, useEffect, useState } from "react";
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import React, { memo, useState } from "react";
+import { StyleSheet, View } from 'react-native';
 import mockReturnApi from "../../constants/mockReturnApi";
 import { SEPARATOR, EVENT_INDEX, MARKET_INDEX } from "../../constants/selectOptionConstants";
 import BettingOptions from "./bettingOptions/BettingOptions";

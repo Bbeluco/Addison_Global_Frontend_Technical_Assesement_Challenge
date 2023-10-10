@@ -16,7 +16,7 @@ export type MarketType = {
 }
 
 /** Selection Entity */
-type SelectionType = {
+export type SelectionType = {
     id: string;
     name: string;
     price: number;
