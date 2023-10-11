@@ -1,20 +1,25 @@
 import React, { memo } from "react";
 import { StyleSheet, View } from 'react-native';
-import mockReturnApi from "../../constants/mockReturnApi";
 import BettingOptions from "./bettingOptions/BettingOptions";
 import MatchTeamsName from "./matchTeamsName/MatchTeamsName";
 import { useMktpBetHooksType } from "../../types/useMktpBetHooksType";
+import { getBetsAvailable } from "../../requests/apiRequestInfo";
+import { ResponseTypeApi } from "../../types/apiResponseType";
 
 interface MktpBetType {
     betOption: useMktpBetHooksType[],
-    pushSelectedOptionInfo: (option: string, teamName: string, titleBet: string, price: number) => void
+    pushSelectedOptionInfo: (option: string, teamName: string, titleBet: string, price: number) => void,
+    apiResponseBetAvaible: ResponseTypeApi,
+    setApiResponseBetAvaible: (response: ResponseTypeApi) => void
 }
 
-const MktpBet = memo(function MktpBet({ betOption, pushSelectedOptionInfo }: MktpBetType): React.JSX.Element {
+const MktpBet = memo(function MktpBet({ betOption, pushSelectedOptionInfo, apiResponseBetAvaible, setApiResponseBetAvaible }: MktpBetType): React.JSX.Element {
+    getBetsAvailable(setApiResponseBetAvaible)
+
     return (
         <View style={styles.viewMktpBetOption}>
             {
-                mockReturnApi.map((event, eventIndex) => (
+                apiResponseBetAvaible.map((event, eventIndex) => (
                     <View key={eventIndex * Math.random()}>
                         <MatchTeamsName eventName={event['name']} />
                         {event['markets'].map((market, marketIndex) => (
