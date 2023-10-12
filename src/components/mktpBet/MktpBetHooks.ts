@@ -3,8 +3,8 @@ import { useState } from "react";
 import { useMktpBetHooksType } from "../../types/useMktpBetHooksType";
 import { ResponseTypeApi } from "../../types/apiResponseType";
 
-function useMktpBetHooks() {
-    const [betOption, setBetOption] = useState<useMktpBetHooksType[]>([])
+function useMktpBetHooks(initialBetOption: useMktpBetHooksType[] = []) {
+    const [betOption, setBetOption] = useState<useMktpBetHooksType[]>(initialBetOption)
     const [apiResponseBetAvaible, setApiResponseBetAvaible] = useState<ResponseTypeApi>([])
 
     function pushSelectedOptionInfo(option: string, teamName: string, titleBet: string, price: number): void {

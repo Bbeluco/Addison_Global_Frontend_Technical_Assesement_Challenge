@@ -1,10 +1,11 @@
 import 'react-native-gesture-handler';
-import React from 'react';
+import React, { useEffect } from 'react';
 import BetSlip from './src/components/betslip/BetSlip';
 import MktpBet from './src/components/mktpBet/MktpBet';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import useMktpBetHooks from './src/components/mktpBet/MktpBetHooks';
+import { getBetsAvailable } from './src/requests/apiRequestInfo';
 
 export default function App() {
   const { 
@@ -14,6 +15,11 @@ export default function App() {
     apiResponseBetAvaible, 
     setApiResponseBetAvaible } = useMktpBetHooks()
   const Drawer = createDrawerNavigator();
+
+  useEffect(() => {
+    getBetsAvailable(setApiResponseBetAvaible)
+  }, [])
+
 
   return (
     <NavigationContainer>

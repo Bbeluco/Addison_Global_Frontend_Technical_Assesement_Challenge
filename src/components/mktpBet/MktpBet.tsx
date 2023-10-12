@@ -3,7 +3,6 @@ import { StyleSheet, View } from 'react-native';
 import BettingOptions from "./bettingOptions/BettingOptions";
 import MatchTeamsName from "./matchTeamsName/MatchTeamsName";
 import { useMktpBetHooksType } from "../../types/useMktpBetHooksType";
-import { getBetsAvailable } from "../../requests/apiRequestInfo";
 import { ResponseTypeApi } from "../../types/apiResponseType";
 
 interface MktpBetType {
@@ -14,8 +13,6 @@ interface MktpBetType {
 }
 
 const MktpBet = memo(function MktpBet({ betOption, pushSelectedOptionInfo, apiResponseBetAvaible, setApiResponseBetAvaible }: MktpBetType): React.JSX.Element {
-    getBetsAvailable(setApiResponseBetAvaible)
-
     return (
         <View style={styles.viewMktpBetOption}>
             {
