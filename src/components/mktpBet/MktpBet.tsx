@@ -13,7 +13,7 @@ interface MktpBetType {
 
 const MktpBet = memo(function MktpBet({ betOption, pushSelectedOptionInfo, apiResponseBetAvaible }: MktpBetType): React.JSX.Element {
     return (
-        <View style={styles.viewMktpBetOption}>
+        <View style={styles.viewMktpBetOption} data-testID='options_available'>
             {
                 apiResponseBetAvaible.map((event, eventIndex) => (
                     <View key={eventIndex * Math.random()}>
