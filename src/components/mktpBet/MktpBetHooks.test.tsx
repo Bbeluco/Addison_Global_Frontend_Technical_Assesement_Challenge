@@ -6,7 +6,7 @@ import { SEPARATOR } from "../../constants/selectOptionConstants";
 describe('MktpBetHooks', () => {
     it('pushSelectedOptionInfo', () => {
         
-        const { result, rerender } = 
+        const { result } = 
             renderHook(({ betOption }) => useMktpBetHooks(betOption), { 
                 initialProps: {
                     betOption: [{ 'option': `button${SEPARATOR}0${SEPARATOR}0${SEPARATOR}0`, 'teamName': 'b', 'titleBet': 'c', 'price': 1 }]
@@ -23,5 +23,20 @@ describe('MktpBetHooks', () => {
             { option: 'button_0_1_1', teamName: 'b', titleBet: 'c', price: 1 }
           ]
         )
+    })
+
+    it('removeItemFromArray', () => {
+        const { result } = 
+            renderHook(({ betOption }) => useMktpBetHooks(betOption), { 
+                initialProps: {
+                    betOption: [{ 'option': `button${SEPARATOR}0${SEPARATOR}0${SEPARATOR}0`, 'teamName': 'b', 'titleBet': 'c', 'price': 1 }]
+                }
+            })
+
+        act(() => {
+            result.current['removeItemFromArray'](0)
+        })
+
+        expect(result.current['betOption']).toEqual([])
     })
 })
