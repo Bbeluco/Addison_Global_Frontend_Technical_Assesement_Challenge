@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<MatchTeamsName /> should render the component correctly 1`] = `
+exports[`<ButtonBetOption /> should render the component correctly 1`] = `
 <View
   accessibilityState={
     {
