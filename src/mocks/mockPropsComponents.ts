@@ -1,4 +1,5 @@
 import { SEPARATOR } from "../constants/selectOptionConstants"
+import mockReturnApi from "./mockReturnApi"
 
 export const betOptionMock = [{ 'option': `button${SEPARATOR}0${SEPARATOR}0${SEPARATOR}0`, 'teamName': 'b', 'titleBet': 'c', 'price': 1 }]
 
@@ -13,3 +14,5 @@ export const selectionPriceMock = 12
 export const eventIndexMock = 0
 export const marketIndexMock = 0
 export const selectionIndexMock = 0
+export const marketNameMock = 'Market name'
+export const selectionsMock = mockReturnApi[0]['markets'][0]['selections']
