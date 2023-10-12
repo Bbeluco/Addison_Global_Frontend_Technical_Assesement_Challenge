@@ -8,11 +8,10 @@ import { ResponseTypeApi } from "../../types/apiResponseType";
 interface MktpBetType {
     betOption: useMktpBetHooksType[],
     pushSelectedOptionInfo: (option: string, teamName: string, titleBet: string, price: number) => void,
-    apiResponseBetAvaible: ResponseTypeApi,
-    setApiResponseBetAvaible: (response: ResponseTypeApi) => void
+    apiResponseBetAvaible: ResponseTypeApi
 }
 
-const MktpBet = memo(function MktpBet({ betOption, pushSelectedOptionInfo, apiResponseBetAvaible, setApiResponseBetAvaible }: MktpBetType): React.JSX.Element {
+const MktpBet = memo(function MktpBet({ betOption, pushSelectedOptionInfo, apiResponseBetAvaible }: MktpBetType): React.JSX.Element {
     return (
         <View style={styles.viewMktpBetOption}>
             {

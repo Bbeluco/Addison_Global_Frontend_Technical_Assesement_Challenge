@@ -6,7 +6,6 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import useMktpBetHooks from './src/components/mktpBet/MktpBetHooks';
 import { getBetsAvailable } from './src/requests/apiRequestInfo';
-import { ResponseTypeApi } from './src/types/apiResponseType';
 
 export default function App() {
   const { 
@@ -38,7 +37,6 @@ export default function App() {
                     betOption={betOption} 
                     pushSelectedOptionInfo={pushSelectedOptionInfo} 
                     apiResponseBetAvaible={apiResponseBetAvaible}
-                    setApiResponseBetAvaible={setApiResponseBetAvaible}
                   />}
         </Drawer.Screen>
       </Drawer.Navigator>
