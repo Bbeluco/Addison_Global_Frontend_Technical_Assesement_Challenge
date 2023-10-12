@@ -16,4 +16,10 @@ describe('getBetsAvailable', () => {
 
         expect(await getBetsAvailable()).toEqual(mockReturnApi)
     })
+
+    it('should test throw error', async () => {
+        (axios.get as jest.Mock).mockRejectedValue(new Error('error'))
+
+        expect(async () => await getBetsAvailable()).rejects.toThrow('error')
+    })
 })
