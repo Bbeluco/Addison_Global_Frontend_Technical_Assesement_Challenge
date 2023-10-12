@@ -31,7 +31,7 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Drawer.Navigator drawerContent={({ state, navigation}) => <BetSlip betOptions={betOption} removeItemFromArray={removeItemFromArray} navigation={navigation}/>}>
+      <Drawer.Navigator drawerContent={({ state, navigation}) => <BetSlip betOptions={betOption} removeItemFromArray={removeItemFromArray} closeDrawer={navigation.closeDrawer}/>}>
         <Drawer.Screen name='Bets'>
           {() => <MktpBet 
                     betOption={betOption} 

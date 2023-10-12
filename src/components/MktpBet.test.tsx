@@ -16,4 +16,6 @@ describe('<MktpBet />', () => {
         ).toJSON();
         expect(component).toMatchSnapshot();
     })
+
+    it.todo('should not render when market is empty')
 })

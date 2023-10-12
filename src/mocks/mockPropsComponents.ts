@@ -5,6 +5,11 @@ export const betOptionMock = [{ 'option': `button${SEPARATOR}0${SEPARATOR}0${SEP
 
 export const pushSelectedOptionInfoMock = {
     add(option: string, teamName: string, titleBet: string, price: number) {},
+    remove(itemRemove: number) {},
+}
+
+export const navigator = {
+    onClose() {},
 }
 
 // export function pushSelectedOptionInfoMock(option: string, teamName: string, titleBet: string, price: number) {}
