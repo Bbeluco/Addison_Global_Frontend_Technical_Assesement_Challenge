@@ -1,6 +1,7 @@
 import { renderHook, act } from '@testing-library/react'
 import useMktpBetHooks from "./MktpBetHooks";
 import { SEPARATOR } from "../../constants/selectOptionConstants";
+import { betOptionMock } from '../../mocks/mockPropsComponents';
 
 describe('MktpBetHooks', () => {
     it('pushSelectedOptionInfo', () => {
@@ -8,7 +9,7 @@ describe('MktpBetHooks', () => {
         const { result } = 
             renderHook(({ betOption }) => useMktpBetHooks(betOption), { 
                 initialProps: {
-                    betOption: [{ 'option': `button${SEPARATOR}0${SEPARATOR}0${SEPARATOR}0`, 'teamName': 'b', 'titleBet': 'c', 'price': 1 }]
+                    betOption: betOptionMock
                 }
             })
 

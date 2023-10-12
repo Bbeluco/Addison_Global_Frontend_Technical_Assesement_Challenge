@@ -1,5 +1,5 @@
 import axios from "axios"
-import mockReturnApi from "../constants/mockReturnApi"
+import mockReturnApi from "../mocks/mockReturnApi"
 import { getBetsAvailable } from "./apiRequestInfo"
 
 jest.mock('axios')
