@@ -6,6 +6,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import useMktpBetHooks from './src/components/mktpBet/MktpBetHooks';
 import { getBetsAvailable } from './src/requests/apiRequestInfo';
+import { ResponseTypeApi } from './src/types/apiResponseType';
 
 export default function App() {
   const { 
@@ -17,7 +18,15 @@ export default function App() {
   const Drawer = createDrawerNavigator();
 
   useEffect(() => {
-    getBetsAvailable(setApiResponseBetAvaible)
+    const response = async () => {
+      return await getBetsAvailable()
+    }
+    response()
+      .then((res) => {
+          setApiResponseBetAvaible(res.data)
+      }).catch(e => {
+        console.log(e)
+      })
   }, [])
 
 
