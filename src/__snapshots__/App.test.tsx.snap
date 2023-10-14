@@ -1,0 +1,1016 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> should render UI correctly 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      collapsable={false}
+      handlerTag={1}
+      handlerType="PanGestureHandler"
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+      style={
+        [
+          {
+            "flex": 1,
+            "overflow": "hidden",
+          },
+          {
+            "flexDirection": "row",
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          [
+            {
+              "flex": 1,
+            },
+            {
+              "transform": [
+                {
+                  "translateX": 0,
+                },
+              ],
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityElementsHidden={false}
+          importantForAccessibility="auto"
+          style={
+            {
+              "flex": 1,
+            }
+          }
+        >
+          <RNSScreenNavigationContainer
+            style={
+              {
+                "flex": 1,
+              }
+            }
+          >
+            <RNSScreen
+              activityState={2}
+              collapsable={false}
+              gestureResponseDistance={
+                {
+                  "bottom": -1,
+                  "end": -1,
+                  "start": -1,
+                  "top": -1,
+                }
+              }
+              onGestureCancel={[Function]}
+              sheetAllowedDetents="large"
+              sheetCornerRadius={-1}
+              sheetExpandsWhenScrolledToEdge={true}
+              sheetGrabberVisible={false}
+              sheetLargestUndimmedDetent="all"
+              style={
+                {
+                  "bottom": 0,
+                  "left": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                  "zIndex": 0,
+                }
+              }
+            >
+              <View
+                accessibilityElementsHidden={false}
+                importantForAccessibility="auto"
+                style={
+                  [
+                    {
+                      "backgroundColor": "rgb(242, 242, 242)",
+                      "flex": 1,
+                    },
+                    [
+                      {
+                        "flex": 1,
+                        "flexDirection": "column-reverse",
+                      },
+                      undefined,
+                    ],
+                  ]
+                }
+              >
+                <View
+                  style={
+                    {
+                      "flex": 1,
+                    }
+                  }
+                >
+                  <RCTScrollView
+                    collapsable={false}
+                    data-testID="mktp_bet"
+                    handlerTag={2}
+                    handlerType="NativeViewGestureHandler"
+                    onGestureHandlerEvent={[Function]}
+                    onGestureHandlerStateChange={[Function]}
+                    style={
+                      {
+                        "margin": 5,
+                      }
+                    }
+                    waitFor={
+                      [
+                        {
+                          "current": null,
+                        },
+                      ]
+                    }
+                  >
+                    <View>
+                      <View>
+                        <View
+                          style={
+                            {
+                              "borderColor": "black",
+                              "borderWidth": 1,
+                              "flexDirection": "row",
+                              "justifyContent": "space-between",
+                              "padding": "10%",
+                            }
+                          }
+                        >
+                          <Text
+                            style={
+                              {
+                                "fontWeight": "bold",
+                              }
+                            }
+                          >
+                            Real Madrid
+                          </Text>
+                          <Text
+                            style={
+                              {
+                                "fontWeight": "bold",
+                              }
+                            }
+                          >
+                            VS
+                          </Text>
+                          <Text
+                            style={
+                              {
+                                "fontWeight": "bold",
+                              }
+                            }
+                          >
+                            Barcelona
+                          </Text>
+                        </View>
+                        <View>
+                          <View
+                            data-testID="betting_options"
+                            style={
+                              {
+                                "borderColor": "black",
+                                "borderWidth": 1,
+                              }
+                            }
+                          >
+                            <Text
+                              style={
+                                {
+                                  "padding": 7,
+                                }
+                              }
+                            >
+                              Team to Win
+                            </Text>
+                            <View
+                              style={
+                                {
+                                  "flexDirection": "row",
+                                  "justifyContent": "space-between",
+                                }
+                              }
+                            >
+                              <View>
+                                <View
+                                  accessibilityState={
+                                    {
+                                      "busy": undefined,
+                                      "checked": undefined,
+                                      "disabled": undefined,
+                                      "expanded": undefined,
+                                      "selected": undefined,
+                                    }
+                                  }
+                                  accessibilityValue={
+                                    {
+                                      "max": undefined,
+                                      "min": undefined,
+                                      "now": undefined,
+                                      "text": undefined,
+                                    }
+                                  }
+                                  accessible={true}
+                                  collapsable={false}
+                                  focusable={true}
+                                  onClick={[Function]}
+                                  onResponderGrant={[Function]}
+                                  onResponderMove={[Function]}
+                                  onResponderRelease={[Function]}
+                                  onResponderTerminate={[Function]}
+                                  onResponderTerminationRequest={[Function]}
+                                  onStartShouldSetResponder={[Function]}
+                                  style={
+                                    {
+                                      "alignItems": "center",
+                                      "borderColor": "black",
+                                      "borderRadius": 10,
+                                      "borderWidth": 1,
+                                      "margin": 5,
+                                      "opacity": 1,
+                                      "padding": 5,
+                                      "width": 100,
+                                    }
+                                  }
+                                  testID="button_Real Madrid_betOption"
+                                >
+                                  <Text>
+                                    Real Madrid
+                                  </Text>
+                                  <Text>
+                                    1.23
+                                  </Text>
+                                </View>
+                              </View>
+                              <View>
+                                <View
+                                  accessibilityState={
+                                    {
+                                      "busy": undefined,
+                                      "checked": undefined,
+                                      "disabled": undefined,
+                                      "expanded": undefined,
+                                      "selected": undefined,
+                                    }
+                                  }
+                                  accessibilityValue={
+                                    {
+                                      "max": undefined,
+                                      "min": undefined,
+                                      "now": undefined,
+                                      "text": undefined,
+                                    }
+                                  }
+                                  accessible={true}
+                                  collapsable={false}
+                                  focusable={true}
+                                  onClick={[Function]}
+                                  onResponderGrant={[Function]}
+                                  onResponderMove={[Function]}
+                                  onResponderRelease={[Function]}
+                                  onResponderTerminate={[Function]}
+                                  onResponderTerminationRequest={[Function]}
+                                  onStartShouldSetResponder={[Function]}
+                                  style={
+                                    {
+                                      "alignItems": "center",
+                                      "borderColor": "black",
+                                      "borderRadius": 10,
+                                      "borderWidth": 1,
+                                      "margin": 5,
+                                      "opacity": 1,
+                                      "padding": 5,
+                                      "width": 100,
+                                    }
+                                  }
+                                  testID="button_Barcelona_betOption"
+                                >
+                                  <Text>
+                                    Barcelona
+                                  </Text>
+                                  <Text>
+                                    2.05
+                                  </Text>
+                                </View>
+                              </View>
+                            </View>
+                          </View>
+                        </View>
+                        <View>
+                          <View
+                            data-testID="betting_options"
+                            style={
+                              {
+                                "borderColor": "black",
+                                "borderWidth": 1,
+                              }
+                            }
+                          >
+                            <Text
+                              style={
+                                {
+                                  "padding": 7,
+                                }
+                              }
+                            >
+                              Player to Score First
+                            </Text>
+                            <View
+                              style={
+                                {
+                                  "flexDirection": "row",
+                                  "justifyContent": "space-between",
+                                }
+                              }
+                            >
+                              <View>
+                                <View
+                                  accessibilityState={
+                                    {
+                                      "busy": undefined,
+                                      "checked": undefined,
+                                      "disabled": undefined,
+                                      "expanded": undefined,
+                                      "selected": undefined,
+                                    }
+                                  }
+                                  accessibilityValue={
+                                    {
+                                      "max": undefined,
+                                      "min": undefined,
+                                      "now": undefined,
+                                      "text": undefined,
+                                    }
+                                  }
+                                  accessible={true}
+                                  collapsable={false}
+                                  focusable={true}
+                                  onClick={[Function]}
+                                  onResponderGrant={[Function]}
+                                  onResponderMove={[Function]}
+                                  onResponderRelease={[Function]}
+                                  onResponderTerminate={[Function]}
+                                  onResponderTerminationRequest={[Function]}
+                                  onStartShouldSetResponder={[Function]}
+                                  style={
+                                    {
+                                      "alignItems": "center",
+                                      "borderColor": "black",
+                                      "borderRadius": 10,
+                                      "borderWidth": 1,
+                                      "margin": 5,
+                                      "opacity": 1,
+                                      "padding": 5,
+                                      "width": 100,
+                                    }
+                                  }
+                                  testID="button_Ronaldo_betOption"
+                                >
+                                  <Text>
+                                    Ronaldo
+                                  </Text>
+                                  <Text>
+                                    1.15
+                                  </Text>
+                                </View>
+                              </View>
+                              <View>
+                                <View
+                                  accessibilityState={
+                                    {
+                                      "busy": undefined,
+                                      "checked": undefined,
+                                      "disabled": undefined,
+                                      "expanded": undefined,
+                                      "selected": undefined,
+                                    }
+                                  }
+                                  accessibilityValue={
+                                    {
+                                      "max": undefined,
+                                      "min": undefined,
+                                      "now": undefined,
+                                      "text": undefined,
+                                    }
+                                  }
+                                  accessible={true}
+                                  collapsable={false}
+                                  focusable={true}
+                                  onClick={[Function]}
+                                  onResponderGrant={[Function]}
+                                  onResponderMove={[Function]}
+                                  onResponderRelease={[Function]}
+                                  onResponderTerminate={[Function]}
+                                  onResponderTerminationRequest={[Function]}
+                                  onStartShouldSetResponder={[Function]}
+                                  style={
+                                    {
+                                      "alignItems": "center",
+                                      "borderColor": "black",
+                                      "borderRadius": 10,
+                                      "borderWidth": 1,
+                                      "margin": 5,
+                                      "opacity": 1,
+                                      "padding": 5,
+                                      "width": 100,
+                                    }
+                                  }
+                                  testID="button_Messi_betOption"
+                                >
+                                  <Text>
+                                    Messi
+                                  </Text>
+                                  <Text>
+                                    1.3
+                                  </Text>
+                                </View>
+                              </View>
+                              <View>
+                                <View
+                                  accessibilityState={
+                                    {
+                                      "busy": undefined,
+                                      "checked": undefined,
+                                      "disabled": undefined,
+                                      "expanded": undefined,
+                                      "selected": undefined,
+                                    }
+                                  }
+                                  accessibilityValue={
+                                    {
+                                      "max": undefined,
+                                      "min": undefined,
+                                      "now": undefined,
+                                      "text": undefined,
+                                    }
+                                  }
+                                  accessible={true}
+                                  collapsable={false}
+                                  focusable={true}
+                                  onClick={[Function]}
+                                  onResponderGrant={[Function]}
+                                  onResponderMove={[Function]}
+                                  onResponderRelease={[Function]}
+                                  onResponderTerminate={[Function]}
+                                  onResponderTerminationRequest={[Function]}
+                                  onStartShouldSetResponder={[Function]}
+                                  style={
+                                    {
+                                      "alignItems": "center",
+                                      "borderColor": "black",
+                                      "borderRadius": 10,
+                                      "borderWidth": 1,
+                                      "margin": 5,
+                                      "opacity": 1,
+                                      "padding": 5,
+                                      "width": 100,
+                                    }
+                                  }
+                                  testID="button_Bale_betOption"
+                                >
+                                  <Text>
+                                    Bale
+                                  </Text>
+                                  <Text>
+                                    1.35
+                                  </Text>
+                                </View>
+                              </View>
+                            </View>
+                          </View>
+                        </View>
+                      </View>
+                      <View>
+                        <View
+                          style={
+                            {
+                              "borderColor": "black",
+                              "borderWidth": 1,
+                              "flexDirection": "row",
+                              "justifyContent": "space-between",
+                              "padding": "10%",
+                            }
+                          }
+                        >
+                          <Text
+                            style={
+                              {
+                                "fontWeight": "bold",
+                              }
+                            }
+                          >
+                            Atletico Madrid
+                          </Text>
+                          <Text
+                            style={
+                              {
+                                "fontWeight": "bold",
+                              }
+                            }
+                          >
+                            VS
+                          </Text>
+                          <Text
+                            style={
+                              {
+                                "fontWeight": "bold",
+                              }
+                            }
+                          >
+                            Malaga
+                          </Text>
+                        </View>
+                        <View>
+                          <View
+                            data-testID="betting_options"
+                            style={
+                              {
+                                "borderColor": "black",
+                                "borderWidth": 1,
+                              }
+                            }
+                          >
+                            <Text
+                              style={
+                                {
+                                  "padding": 7,
+                                }
+                              }
+                            >
+                              Team to Win
+                            </Text>
+                            <View
+                              style={
+                                {
+                                  "flexDirection": "row",
+                                  "justifyContent": "space-between",
+                                }
+                              }
+                            >
+                              <View>
+                                <View
+                                  accessibilityState={
+                                    {
+                                      "busy": undefined,
+                                      "checked": undefined,
+                                      "disabled": undefined,
+                                      "expanded": undefined,
+                                      "selected": undefined,
+                                    }
+                                  }
+                                  accessibilityValue={
+                                    {
+                                      "max": undefined,
+                                      "min": undefined,
+                                      "now": undefined,
+                                      "text": undefined,
+                                    }
+                                  }
+                                  accessible={true}
+                                  collapsable={false}
+                                  focusable={true}
+                                  onClick={[Function]}
+                                  onResponderGrant={[Function]}
+                                  onResponderMove={[Function]}
+                                  onResponderRelease={[Function]}
+                                  onResponderTerminate={[Function]}
+                                  onResponderTerminationRequest={[Function]}
+                                  onStartShouldSetResponder={[Function]}
+                                  style={
+                                    {
+                                      "alignItems": "center",
+                                      "borderColor": "black",
+                                      "borderRadius": 10,
+                                      "borderWidth": 1,
+                                      "margin": 5,
+                                      "opacity": 1,
+                                      "padding": 5,
+                                      "width": 100,
+                                    }
+                                  }
+                                  testID="button_Atletico_betOption"
+                                >
+                                  <Text>
+                                    Atletico
+                                  </Text>
+                                  <Text>
+                                    1.4
+                                  </Text>
+                                </View>
+                              </View>
+                              <View>
+                                <View
+                                  accessibilityState={
+                                    {
+                                      "busy": undefined,
+                                      "checked": undefined,
+                                      "disabled": undefined,
+                                      "expanded": undefined,
+                                      "selected": undefined,
+                                    }
+                                  }
+                                  accessibilityValue={
+                                    {
+                                      "max": undefined,
+                                      "min": undefined,
+                                      "now": undefined,
+                                      "text": undefined,
+                                    }
+                                  }
+                                  accessible={true}
+                                  collapsable={false}
+                                  focusable={true}
+                                  onClick={[Function]}
+                                  onResponderGrant={[Function]}
+                                  onResponderMove={[Function]}
+                                  onResponderRelease={[Function]}
+                                  onResponderTerminate={[Function]}
+                                  onResponderTerminationRequest={[Function]}
+                                  onStartShouldSetResponder={[Function]}
+                                  style={
+                                    {
+                                      "alignItems": "center",
+                                      "borderColor": "black",
+                                      "borderRadius": 10,
+                                      "borderWidth": 1,
+                                      "margin": 5,
+                                      "opacity": 1,
+                                      "padding": 5,
+                                      "width": 100,
+                                    }
+                                  }
+                                  testID="button_Malaga_betOption"
+                                >
+                                  <Text>
+                                    Malaga
+                                  </Text>
+                                  <Text>
+                                    3.05
+                                  </Text>
+                                </View>
+                              </View>
+                            </View>
+                          </View>
+                        </View>
+                      </View>
+                    </View>
+                  </RCTScrollView>
+                </View>
+                <View
+                  onLayout={[Function]}
+                  style={null}
+                >
+                  <View
+                    collapsable={false}
+                    pointerEvents="box-none"
+                    style={
+                      {
+                        "bottom": 0,
+                        "left": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                        "zIndex": 0,
+                      }
+                    }
+                  >
+                    <View
+                      collapsable={false}
+                      style={
+                        {
+                          "backgroundColor": "rgb(255, 255, 255)",
+                          "borderBottomColor": "rgb(216, 216, 216)",
+                          "flex": 1,
+                          "shadowColor": "rgb(216, 216, 216)",
+                          "shadowOffset": {
+                            "height": 0.5,
+                            "width": 0,
+                          },
+                          "shadowOpacity": 0.85,
+                          "shadowRadius": 0,
+                        }
+                      }
+                    />
+                  </View>
+                  <View
+                    collapsable={false}
+                    pointerEvents="box-none"
+                    style={
+                      {
+                        "height": 44,
+                        "maxHeight": undefined,
+                        "minHeight": undefined,
+                        "opacity": undefined,
+                        "transform": undefined,
+                      }
+                    }
+                  >
+                    <View
+                      pointerEvents="none"
+                      style={
+                        {
+                          "height": 0,
+                        }
+                      }
+                    />
+                    <View
+                      pointerEvents="box-none"
+                      style={
+                        {
+                          "alignItems": "stretch",
+                          "flex": 1,
+                          "flexDirection": "row",
+                        }
+                      }
+                    >
+                      <View
+                        collapsable={false}
+                        pointerEvents="box-none"
+                        style={
+                          {
+                            "alignItems": "flex-start",
+                            "flexBasis": 0,
+                            "flexGrow": 1,
+                            "justifyContent": "center",
+                            "marginStart": 0,
+                          }
+                        }
+                      >
+                        <View
+                          accessibilityRole="button"
+                          accessibilityState={
+                            {
+                              "busy": undefined,
+                              "checked": undefined,
+                              "disabled": undefined,
+                              "expanded": undefined,
+                              "selected": undefined,
+                            }
+                          }
+                          accessibilityValue={
+                            {
+                              "max": undefined,
+                              "min": undefined,
+                              "now": undefined,
+                              "text": undefined,
+                            }
+                          }
+                          accessible={true}
+                          collapsable={false}
+                          focusable={true}
+                          onBlur={[Function]}
+                          onClick={[Function]}
+                          onFocus={[Function]}
+                          onResponderGrant={[Function]}
+                          onResponderMove={[Function]}
+                          onResponderRelease={[Function]}
+                          onResponderTerminate={[Function]}
+                          onResponderTerminationRequest={[Function]}
+                          onStartShouldSetResponder={[Function]}
+                          style={
+                            {
+                              "marginHorizontal": 11,
+                              "opacity": 1,
+                            }
+                          }
+                        >
+                          <Image
+                            fadeDuration={0}
+                            source={
+                              {
+                                "testUri": "../../@react-navigation/drawer/lib/commonjs/views/assets/toggle-drawer-icon.png",
+                              }
+                            }
+                            style={
+                              [
+                                {
+                                  "height": 24,
+                                  "margin": 3,
+                                  "resizeMode": "contain",
+                                  "width": 24,
+                                },
+                                null,
+                              ]
+                            }
+                          />
+                        </View>
+                      </View>
+                      <View
+                        collapsable={false}
+                        pointerEvents="box-none"
+                        style={
+                          {
+                            "justifyContent": "center",
+                            "marginHorizontal": 16,
+                            "maxWidth": 590,
+                          }
+                        }
+                      >
+                        <Text
+                          accessibilityRole="header"
+                          aria-level="1"
+                          collapsable={false}
+                          numberOfLines={1}
+                          style={
+                            {
+                              "color": "rgb(28, 28, 30)",
+                              "fontSize": 17,
+                              "fontWeight": "600",
+                            }
+                          }
+                        >
+                          Bets
+                        </Text>
+                      </View>
+                      <View
+                        collapsable={false}
+                        pointerEvents="box-none"
+                        style={
+                          {
+                            "alignItems": "flex-end",
+                            "flexBasis": 0,
+                            "flexGrow": 1,
+                            "justifyContent": "center",
+                            "marginEnd": 0,
+                          }
+                        }
+                      />
+                    </View>
+                  </View>
+                </View>
+              </View>
+            </RNSScreen>
+          </RNSScreenNavigationContainer>
+        </View>
+        <View
+          animatedProps={
+            {
+              "accessibilityElementsHidden": true,
+              "importantForAccessibility": "no-hide-descendants",
+              "pointerEvents": "none",
+            }
+          }
+          style={
+            [
+              {
+                "backgroundColor": "rgba(0, 0, 0, 0.5)",
+                "bottom": 0,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+              {},
+              {
+                "opacity": undefined,
+                "zIndex": -1,
+              },
+              {
+                "backgroundColor": "rgba(0, 0, 0, 0.5)",
+              },
+            ]
+          }
+        >
+          <View
+            accessibilityLabel="Close drawer"
+            accessibilityRole="button"
+            accessibilityState={
+              {
+                "busy": undefined,
+                "checked": undefined,
+                "disabled": undefined,
+                "expanded": undefined,
+                "selected": undefined,
+              }
+            }
+            accessibilityValue={
+              {
+                "max": undefined,
+                "min": undefined,
+                "now": undefined,
+                "text": undefined,
+              }
+            }
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              {
+                "flex": 1,
+                "pointerEvents": "auto",
+              }
+            }
+          />
+        </View>
+      </View>
+      <View
+        removeClippedSubviews={false}
+        style={
+          [
+            {
+              "bottom": 0,
+              "maxWidth": "100%",
+              "top": 0,
+              "width": "80%",
+            },
+            {
+              "position": "absolute",
+              "zIndex": 0,
+            },
+            {
+              "transform": [
+                {
+                  "translateX": -320,
+                },
+              ],
+            },
+            [
+              {
+                "backgroundColor": "rgb(255, 255, 255)",
+                "width": 320,
+              },
+              false,
+              undefined,
+            ],
+          ]
+        }
+      >
+        <View>
+          <View
+            accessibilityState={
+              {
+                "busy": undefined,
+                "checked": undefined,
+                "disabled": undefined,
+                "expanded": undefined,
+                "selected": undefined,
+              }
+            }
+            accessibilityValue={
+              {
+                "max": undefined,
+                "min": undefined,
+                "now": undefined,
+                "text": undefined,
+              }
+            }
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              {
+                "margin": 20,
+                "opacity": 1,
+              }
+            }
+          >
+            <Text
+              style={
+                {
+                  "fontSize": 20,
+                  "fontWeight": "bold",
+                }
+              }
+            >
+              X
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;

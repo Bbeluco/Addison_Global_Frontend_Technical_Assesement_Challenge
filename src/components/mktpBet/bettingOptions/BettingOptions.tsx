@@ -11,7 +11,7 @@ function BettingOptions({
         eventIndex, 
         marketIndex }: BettingOptionsType): React.JSX.Element {
     return (
-        <View key={Math.random()} style={styles.viewArea}>
+        <View key={Math.random()} style={styles.viewArea} data-testID='betting_options'>
             <Text style={styles.titleBetName}>{name}</Text>
             <View style={styles.bets}>
             {selections.map((selection, selectionIndex) => (

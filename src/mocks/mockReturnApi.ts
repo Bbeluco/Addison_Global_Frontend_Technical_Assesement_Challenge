@@ -73,4 +73,12 @@ const mockReturnApi: ResponseTypeApi = [
 	}
 ]
 
+export const mockReturnEmptyMarket: ResponseTypeApi = [
+	{
+		"id": "EVT_3",
+		"name": "Empty Event that shouldn't render",
+		"markets": []
+	}
+]
+
 export default mockReturnApi

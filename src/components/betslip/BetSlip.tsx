@@ -1,19 +1,18 @@
 import React from "react";
 import { StyleSheet, View, Text } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { TouchableOpacity } from "react-native";
 import { useMktpBetHooksType } from "../../types/useMktpBetHooksType";
-import { DrawerNavigationHelpers } from "@react-navigation/drawer/lib/typescript/src/types";
 
 interface BetSlipType {
     betOptions: useMktpBetHooksType[],
     removeItemFromArray: (itemToRemove: number) => void,
-    navigation: DrawerNavigationHelpers
+    closeDrawer: () => void
 }
 
-function BetSlip({ betOptions, removeItemFromArray, navigation }: BetSlipType): React.JSX.Element {
+function BetSlip({ betOptions, removeItemFromArray, closeDrawer }: BetSlipType): React.JSX.Element {
     return (
         <View>
-            <TouchableOpacity style={styles.btnCloseDrawer} onPress={() => navigation.closeDrawer()}>
+            <TouchableOpacity style={styles.btnCloseDrawer} onPress={() => closeDrawer()}>
                 <Text style={styles.textBtnCloseDrawer}>X</Text>
             </TouchableOpacity>
             {betOptions?.map((betOption, index) => (
