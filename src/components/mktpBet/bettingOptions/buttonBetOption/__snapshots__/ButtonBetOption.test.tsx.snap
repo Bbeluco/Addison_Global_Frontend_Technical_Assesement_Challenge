@@ -41,6 +41,7 @@ exports[`<ButtonBetOption /> should render the component correctly background co
       "width": 100,
     }
   }
+  testID="button_To_win_betOption"
 >
   <Text>
     To win
@@ -93,6 +94,7 @@ exports[`<ButtonBetOption /> should render the component correctly background co
       "width": 100,
     }
   }
+  testID="button_To_win_betOption"
 >
   <Text>
     To win

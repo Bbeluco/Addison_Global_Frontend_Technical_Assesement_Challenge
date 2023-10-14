@@ -2,6 +2,7 @@
 
 exports[`<BettingOptions /> should render the component correctly 1`] = `
 <View
+  data-testID="betting_options"
   style={
     {
       "borderColor": "black",
@@ -68,6 +69,7 @@ exports[`<BettingOptions /> should render the component correctly 1`] = `
             "width": 100,
           }
         }
+        testID="button_Real_Madrid_betOption"
       >
         <Text>
           Real Madrid
@@ -118,6 +120,7 @@ exports[`<BettingOptions /> should render the component correctly 1`] = `
             "width": 100,
           }
         }
+        testID="button_Barcelona_betOption"
       >
         <Text>
           Barcelona

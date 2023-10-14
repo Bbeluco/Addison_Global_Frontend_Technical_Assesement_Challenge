@@ -18,6 +18,7 @@ function ButtonBetOption({
         <TouchableOpacity
             onPress={() => pushSelectedOptionInfo(buttonIdentifier, name, titleBet, price)}
             style={[styles.viewArea, styles.btnChoseBet, betOption.find(x => x['option'] === buttonIdentifier) && styles.optinChoosen]}
+            testID={`button_${name.replace(' ', '_')}_betOption`}
         >
             <Text>{name}</Text>
             <Text>{price}</Text>

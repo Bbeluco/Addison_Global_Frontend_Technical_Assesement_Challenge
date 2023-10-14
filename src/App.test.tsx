@@ -1,9 +1,7 @@
 import App from "../App";
 import axios from "axios";
-import renderer, { act } from 'react-test-renderer';
 import mockReturnApi from "./mocks/mockReturnApi";
-import { fireEvent, render, screen } from "@testing-library/react-native";
-import { waitFor } from "@testing-library/dom";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react-native";
 
 jest.mock('axios')
 
@@ -12,20 +10,12 @@ beforeAll(() => {
 })
 
 describe('<App />', () => {
-    it('should render UI correctly', async () => {
-        const component = renderer.create(<App/>).toJSON();
-        await waitFor(() => {
-            screen.findByText(mockReturnApi[0]['markets'][0]['name'])
-        })
-        expect(component).toMatchSnapshot();
-    })
-
-    it('should interact with any option available', async () => {
+    it('should render UI correctly', async () => {       
         render(<App />)
-        await waitFor(() => {
-            screen.findByText(mockReturnApi[0]['markets'][0]['name'])
-        })
 
-        screen.debug()
+        await waitFor(() => {
+            expect(screen.getByTestId(`button_Real_Madrid_betOption`)).toBeTruthy()
+        });
+        expect(screen.toJSON()).toMatchSnapshot()
     })
 })

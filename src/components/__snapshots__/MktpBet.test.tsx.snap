@@ -2,6 +2,7 @@
 
 exports[`<MktpBet /> should render the component correctly 1`] = `
 <View
+  data-testID="mktp_bet"
   style={
     {
       "margin": 5,
@@ -50,6 +51,7 @@ exports[`<MktpBet /> should render the component correctly 1`] = `
     </View>
     <View>
       <View
+        data-testID="betting_options"
         style={
           {
             "borderColor": "black",
@@ -116,6 +118,7 @@ exports[`<MktpBet /> should render the component correctly 1`] = `
                   "width": 100,
                 }
               }
+              testID="button_Real_Madrid_betOption"
             >
               <Text>
                 Real Madrid
@@ -166,6 +169,7 @@ exports[`<MktpBet /> should render the component correctly 1`] = `
                   "width": 100,
                 }
               }
+              testID="button_Barcelona_betOption"
             >
               <Text>
                 Barcelona
@@ -180,6 +184,7 @@ exports[`<MktpBet /> should render the component correctly 1`] = `
     </View>
     <View>
       <View
+        data-testID="betting_options"
         style={
           {
             "borderColor": "black",
@@ -245,6 +250,7 @@ exports[`<MktpBet /> should render the component correctly 1`] = `
                   "width": 100,
                 }
               }
+              testID="button_Ronaldo_betOption"
             >
               <Text>
                 Ronaldo
@@ -295,6 +301,7 @@ exports[`<MktpBet /> should render the component correctly 1`] = `
                   "width": 100,
                 }
               }
+              testID="button_Messi_betOption"
             >
               <Text>
                 Messi
@@ -345,6 +352,7 @@ exports[`<MktpBet /> should render the component correctly 1`] = `
                   "width": 100,
                 }
               }
+              testID="button_Bale_betOption"
             >
               <Text>
                 Bale
@@ -400,6 +408,7 @@ exports[`<MktpBet /> should render the component correctly 1`] = `
     </View>
     <View>
       <View
+        data-testID="betting_options"
         style={
           {
             "borderColor": "black",
@@ -465,6 +474,7 @@ exports[`<MktpBet /> should render the component correctly 1`] = `
                   "width": 100,
                 }
               }
+              testID="button_Atletico_betOption"
             >
               <Text>
                 Atletico
@@ -515,6 +525,7 @@ exports[`<MktpBet /> should render the component correctly 1`] = `
                   "width": 100,
                 }
               }
+              testID="button_Malaga_betOption"
             >
               <Text>
                 Malaga
