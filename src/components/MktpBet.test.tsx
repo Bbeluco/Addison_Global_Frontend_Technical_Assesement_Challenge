@@ -1,21 +1,29 @@
 import MktpBet from "./mktpBet/MktpBet";
 import { betOptionMock, pushSelectedOptionInfoMock } from "../mocks/mockPropsComponents";
-import mockReturnApi from "../mocks/mockReturnApi";
-import renderer from 'react-test-renderer';
-
-jest.mock('axios')
+import mockReturnApi, { mockReturnEmptyMarket } from "../mocks/mockReturnApi";
+import { render, screen } from "@testing-library/react-native";
 
 describe('<MktpBet />', () => {
     it('should render the component correctly', () => {
-        const component = renderer.create(
+        render(
             <MktpBet
                 betOption={betOptionMock}
                 pushSelectedOptionInfo={pushSelectedOptionInfoMock.add}
                 apiResponseBetAvaible={mockReturnApi}
             />
-        ).toJSON();
-        expect(component).toMatchSnapshot();
+        )
+        expect(screen.toJSON()).toMatchSnapshot();
     })
 
-    it.todo('should not render when market is empty')
+    it('should not render when market is empty', () => {
+        render(
+            <MktpBet
+                betOption={betOptionMock}
+                pushSelectedOptionInfo={pushSelectedOptionInfoMock.add}
+                apiResponseBetAvaible={mockReturnEmptyMarket}
+            />
+        )
+
+        expect(screen.queryByTestId('betting_options')).toBeNull()
+    })
 })
