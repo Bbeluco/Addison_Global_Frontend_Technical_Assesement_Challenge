@@ -4,6 +4,7 @@ import BettingOptions from "./bettingOptions/BettingOptions";
 import MatchTeamsName from "./matchTeamsName/MatchTeamsName";
 import { useMktpBetHooksType } from "../../types/useMktpBetHooksType";
 import { ResponseTypeApi } from "../../types/apiResponseType";
+import { ScrollView } from "react-native-gesture-handler";
 
 interface MktpBetType {
     betOption: useMktpBetHooksType[],
@@ -13,7 +14,7 @@ interface MktpBetType {
 
 const MktpBet = memo(function MktpBet({ betOption, pushSelectedOptionInfo, apiResponseBetAvaible }: MktpBetType): React.JSX.Element {   
     return (
-        <View style={styles.viewMktpBetOption} data-testID='mktp_bet'>
+        <ScrollView style={styles.viewMktpBetOption} data-testID='mktp_bet'>
             {
                 apiResponseBetAvaible.map((event, eventIndex) => (
                     <View key={eventIndex * Math.random()}>
@@ -33,7 +34,7 @@ const MktpBet = memo(function MktpBet({ betOption, pushSelectedOptionInfo, apiRe
                     </View>
                 ))
             }
-        </View>
+        </ScrollView>
     )
 })
 
