@@ -16,23 +16,27 @@ const MktpBet = memo(function MktpBet({ betOption, pushSelectedOptionInfo, apiRe
     return (
         <ScrollView style={styles.viewMktpBetOption} data-testID='mktp_bet'>
             {
-                apiResponseBetAvaible.map((event, eventIndex) => (
-                    <View key={eventIndex * Math.random()}>
-                        <MatchTeamsName eventName={event['name']} />
-                        {event['markets'].map((market, marketIndex) => (
-                            <View key={marketIndex * Math.random()}>
-                                <BettingOptions
-                                    name={market['name']} 
-                                    selections={market['selections']}
-                                    pushSelectedOptionInfo={pushSelectedOptionInfo}
-                                    betOption={betOption}
-                                    eventIndex={eventIndex}
-                                    marketIndex={marketIndex}
-                                />
-                            </View>
-                        ))}
-                    </View>
-                ))
+                apiResponseBetAvaible.map((event, eventIndex) => {
+                    if(event['markets'].length){   
+                        return (
+                        <View key={eventIndex * Math.random()}>
+                            <MatchTeamsName eventName={event['name']} />
+                            {event['markets'].map((market, marketIndex) => (
+                                <View key={marketIndex * Math.random()}>
+                                    <BettingOptions
+                                        name={market['name']} 
+                                        selections={market['selections']}
+                                        pushSelectedOptionInfo={pushSelectedOptionInfo}
+                                        betOption={betOption}
+                                        eventIndex={eventIndex}
+                                        marketIndex={marketIndex}
+                                    />
+                                </View>
+                            ))}
+                        </View>
+                        )
+                    }
+            })
             }
         </ScrollView>
     )
