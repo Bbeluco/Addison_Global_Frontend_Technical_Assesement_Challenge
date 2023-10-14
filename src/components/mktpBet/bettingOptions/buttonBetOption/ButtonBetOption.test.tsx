@@ -1,5 +1,4 @@
 import ButtonBetOption from './ButtonBetOption';
-import renderer from 'react-test-renderer';
 import { 
     pushSelectedOptionInfoMock, 
     betOptionMock,
@@ -14,7 +13,7 @@ import { fireEvent, render, screen } from '@testing-library/react-native';
 
 describe('<ButtonBetOption />', () => {
     it('should render the component correctly background color green', () => {
-        const component = renderer.create(
+        render(
             <ButtonBetOption 
                 pushSelectedOptionInfo={pushSelectedOptionInfoMock.add}
                 betOption={betOptionMock}
@@ -25,12 +24,14 @@ describe('<ButtonBetOption />', () => {
                 marketIndex={marketIndexMock}
                 selectionIndex={selectionIndexMock}
             />
-        ).toJSON();
-        expect(component).toMatchSnapshot();
+        )
+        expect(screen.toJSON()).toMatchSnapshot();
+        const componentProps = screen.getByTestId(`button_${selectionBetNameMock}_betOption`).props
+        expect(componentProps['style']).toMatchObject({ backgroundColor: 'green' })
     })
 
     it('should render the component correctly background color default', () => {
-        const component = renderer.create(
+        render(
             <ButtonBetOption 
                 pushSelectedOptionInfo={pushSelectedOptionInfoMock.add}
                 betOption={betOptionMock}
@@ -41,8 +42,8 @@ describe('<ButtonBetOption />', () => {
                 marketIndex={marketIndexMock}
                 selectionIndex={1}
             />
-        ).toJSON();
-        expect(component).toMatchSnapshot();
+        )
+        expect(screen.toJSON()).toMatchSnapshot();
     })
 
     it('should call pushSelectedOptionInfoMock function', () => {

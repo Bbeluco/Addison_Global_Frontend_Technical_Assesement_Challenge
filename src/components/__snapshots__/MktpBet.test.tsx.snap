@@ -118,7 +118,7 @@ exports[`<MktpBet /> should render the component correctly 1`] = `
                   "width": 100,
                 }
               }
-              testID="button_Real_Madrid_betOption"
+              testID="button_Real Madrid_betOption"
             >
               <Text>
                 Real Madrid

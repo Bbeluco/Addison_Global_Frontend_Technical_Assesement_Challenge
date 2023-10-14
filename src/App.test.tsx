@@ -14,7 +14,7 @@ describe('<App />', () => {
         render(<App />)
 
         await waitFor(() => {
-            expect(screen.getByTestId(`button_Real_Madrid_betOption`)).toBeTruthy()
+            expect(screen.getByTestId(`button_Real Madrid_betOption`)).toBeTruthy()
         });
         expect(screen.toJSON()).toMatchSnapshot()
     })
